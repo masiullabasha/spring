@@ -1,0 +1,14 @@
+# Use official Java image
+FROM openjdk:17-jdk-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy project JAR file
+COPY target/spring-microservice.jar app.jar
+
+# Expose application port
+EXPOSE 8080
+
+# Run application
+ENTRYPOINT ["java", "-jar", "app.jar"]
